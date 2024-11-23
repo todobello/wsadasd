@@ -12,6 +12,13 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 
+
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    raise ImportError("La biblioteca matplotlib no está instalada. Instálala ejecutando: pip install matplotlib")
+
+
 # Función para obtener datos de la API REST Countries
 def obtener_datos_api():
     url = "https://restcountries.com/v3.1/all"
